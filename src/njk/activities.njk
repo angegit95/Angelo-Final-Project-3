@@ -1,0 +1,25 @@
+{% block content %}
+  <article class="container">
+<div class="offset-md-2 col-md-8">
+  <h1>Activities</h1>
+  <p>As the world's new music capital, Austin offers a varety a fun and exciting activities
+  that are sure to keep the you and whoever you are travelling with entertained. A nice kayak on Ladyird lake
+  is always a great way to keep in shape. Feeling like doing something more chill? Come out to Blues on the Green in summers and chill out with a beer and listen to a free blues concert!
+  Check out jsut a few of the great things to so around Austin throughout the year.</p>
+ </div>
+  <div class="row">
+    {% for activities in austin.activities %}
+    <div class="col-sm-6 col-lg-4">
+      <div class="text-black bg-light mb-4" style="max width: 18rem:">
+            <h5 class="header">{{ activities.activity }}</h5>
+        <div class="body">
+          <h6 class="datetime">{{ activties.date_time }}</h6>
+          <p class="actadd">{{ activities.address }}</p>
+           <a class="source"href="{{ activities.url }}" target="_blank">Visit Site</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</article>
+{% endblock %}

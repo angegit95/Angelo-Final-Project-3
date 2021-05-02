@@ -1,0 +1,25 @@
+{% extends '_templates/base.njk' %}
+
+{% block content %}
+  <article class="container">
+<div class="offset-md-2 col-md-8">
+  <h1>Murals</h1>
+  <p>Austin is home to some of the world's besy muralists and artists. Spread throughput the city are pleasant paintings that make an amazing backdrop for selfie. As our city grows, so too does the quality and beauty of our street art. Explore just a few of those creative creations and tell your friends all about them!</p>
+ </div>
+  <div class="row">
+    {% for murals in austin.murals %}
+    <div class="col-sm-6 col-lg-4">
+      <div class="text-black bg-light mb-4" style="max width: 18rem:">
+            <h5 class="header">{{ murals.name }}</h5>
+        <div class="body">
+          <h6 class="maddy">{{ murals.address }}</h6>
+          <p class="mlat">{{ murals.latitude }}</p>,<p class="mlong">{{ murals.longitude }}</p>
+           <a class="mloc"href="{{ murals.map_location }}" target="_blank">Map Location</a>
+          <hr>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</article>
+{% endblock %}
